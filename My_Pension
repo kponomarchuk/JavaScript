@@ -1,0 +1,40 @@
+var age = 33;
+var pensionAge = 60;
+var savings =0;
+var salary = 100;
+var annualSalaryIncrease = 10;
+var interestRate = 10;
+ function savingsTotals(vSavings, vSalary)
+ {
+	 return vSavings+vSalary;
+ }
+ 
+ function salaryIncrease (vSalary, vIncrease)
+ {return vSalary+vIncrease
+ }
+ 
+ function sumOfInterestPerMonth(vSavings,vInterestRate)
+ {
+	 return (vSavings*vInterestRate)/(12*100);
+ }
+ 
+ function getSavingsAmount(){
+	 
+	 var numOfMonthToPension = (pensionAge -age)*12;
+ while (numOfMonthToPension>=0)
+ {
+ if (numOfMonthToPension !==0&&numOfMonthToPension%12 ==0)
+ {
+	 salary=salaryIncrease(salary,annualSalaryIncrease);
+ }
+ savings = savingsTotals(savings,salary);
+ savings += sumOfInterestPerMonth(savings,interestRate);
+  
+ numOfMonthToPension--;
+ //console.log("You are working "+numOfMonthToPension+ " month. Earned" +savings+ ". Have salary" +salary)
+ //break;
+ }
+ console.log("You have saved "+savings+ " for "+(pensionAge -age)+ " years. ")
+ }
+ getSavingsAmount();
+ 

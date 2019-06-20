@@ -1,0 +1,51 @@
+(function ()
+{
+    var age = 33;
+
+    var countOfYears = 60 - age;
+    var howMuchYouWantToSaveEveryMonth = 704;
+    var interestRate = 12;
+
+    var sum = 0;
+
+    createRetirementPlan();
+
+    printAccountStatement();
+
+    // calculate how much money you will have after countOfYears of savings
+    // with given monthlyPayment and interestRate
+    function createRetirementPlan()
+    {
+        // TODO your code here
+		/*while(countOfYears>=0){
+			sum+=howMuchYouWantToSaveEveryMonth*12;
+			sum+=calcInterest(sum);			
+			countOfYears--;
+				}*/
+				
+			var countOfMonth = countOfYears*12;	
+				while(countOfMonth>=0){
+			sum+=howMuchYouWantToSaveEveryMonth;
+			sum+=calcInterest(sum)/12;			
+			console.log("Sum: " +sum+" Count of month: "+countOfMonth);
+			countOfMonth--;
+				}
+				
+				
+    }
+
+    function calcInterest(vSum)
+    {
+        // TODO your code here
+		return (interestRate/100)*vSum;
+    }
+
+    // Utils
+
+    function printAccountStatement()
+    {
+        console.log("Account: " + sum.toLocaleString('en-US', {maximumFractionDigits: 0}));
+        console.log("Mon  CF: " + (calcInterest(sum) / 12).toLocaleString('en-US', {maximumFractionDigits: 2}));
+    }
+
+})();
