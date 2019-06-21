@@ -1,0 +1,52 @@
+(function ()
+{
+    var Dog1 = {"name":"SHARIK", "age":23, "address":"KIEV"};
+    console.log(JSON.stringify(Dog1));
+	Dog1.toys = "ball";
+	console.log(JSON.stringify(Dog1));
+	
+ function createDog(dogObj, name, age, address)
+    {
+        var dogObj = generateDogObject();
+		dogObj.name = "Rex"
+		//dogObj.toysTest = address;
+
+    }
+
+
+	function generateDogObject()
+	{
+		return 
+		{
+			name: "",
+			address: 
+			{
+				city: ""
+			}
+		}
+		
+	}
+	
+
+
+    function fillArrayWithRndNumbers(arr, count)
+    {
+         for(i = 0 ; i < count ; i++)
+			{
+				arr[i] = getRndNumber();
+				
+			}
+
+    }
+
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+    function getRndNumber()
+    {
+        return Math.floor(Math.random() * 100);
+    }
+
+})();
