@@ -1,0 +1,128 @@
+
+    
+(function ()
+{
+ //Creation of the Dogs
+	var Dog1 = createDog();
+	var Dog2 = createDog();
+	var Dog3 = createDog();
+//Creation of the Address
+	var Address1 = createAddress();
+	var Address2 = createAddress();
+//Creation of the Toys
+	var Toy1 = createToy();
+	var Toy2 = createToy();
+	var Toy3 = createToy();
+//Assigning params for Address
+	assignAddressParam (Address1,"Ukraine", "Kiev", "White");
+	assignAddressParam (Address2,"Poland", "Wroclaw", "Black");
+	
+		printArray(Address1);
+		printArray(Address2);
+//Assigning params for Toys	
+	assignToyParam (Toy1,"Stick");
+	assignToyParam (Toy2,"Ball");
+	assignToyParam (Toy3,"Cat");
+//Assigning params for Dogs	
+	assignDogParam (Dog1,"Tuzik",21, Address1,[Toy1,Toy2,Toy3]);
+	assignDogParam (Dog2,"Sharik",10, Address2,[Toy2,Toy3]);
+	assignDogParam (Dog3,"Jack",12, Address1,[Toy1,Toy3]);
+		printArray(Dog1);
+		printArray(Dog2);
+		printArray(Dog3);
+//Creation of the Dog Array
+	var Dogs = [Dog1,Dog2,Dog3];
+		printArray(Dogs);
+		printArray(Dogs);
+		
+		console.log("Number of dogs from Kiev is : " + allDogsFromCity(Dogs,"Kiev"));
+		
+//Search functions	
+	function allDogsFromCity(vDogs,vCity)
+    {
+	var dogCount=0;
+	       for(i = 0; i < vDogs.length; i++) {
+    if (!vDogs[i]) continue;  // Can't proceed with undefined data
+	var vDog = vDogs[i];
+	var vDogCity = vDog.address.city;
+	console.log(vDogCity);
+	if (vDogCity==vCity) {dogCount++;
+	}
+	
+}
+		return dogCount;
+    }
+		
+		
+		
+/////Creation and population of the object params
+     function createDog()
+    {
+        return  {
+		name:"",
+		age:"",
+		address:{country:"",
+		city:"",
+		house:""},
+		toy:[]
+		}
+		
+    }
+	
+	function assignDogParam(Dog, vName, vAge,Address,Toy)
+    {
+        Dog.name= vName;
+		Dog.age= vAge;
+		Dog.address= Address;
+		Dog.toy=Toy;
+		
+		
+    }
+	
+	
+	function createAddress()
+    {
+        return  {
+		country:"",
+		city:"",
+		house:""
+		 }
+		
+    }
+	
+	function assignAddressParam(Address, vCountry, vCity, vHouse)
+    {
+       Address.country= vCountry;
+	   Address.city=vCity;
+	   Address.house =vHouse;
+		
+    }
+
+	
+		function createToy()
+    {
+        return  {
+		name:""
+		 }
+		
+    }
+	
+	function assignToyParam(Toy, vName)
+    {
+       Toy.name= vName;
+    }
+	
+	
+	
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+    function getRndNumber()
+    {
+        return Math.floor(Math.random() * 100);
+    }
+
+})();
+
