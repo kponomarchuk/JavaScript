@@ -33,24 +33,68 @@
 //Creation of the Dog Array
 	var Dogs = [Dog1,Dog2,Dog3];
 		printArray(Dogs);
-		printArray(Dogs);
 		
-		console.log("Number of dogs from Kiev is : " + allDogsFromCity(Dogs,"Kiev"));
+	var cityLookup = "Kiev";	
+		console.log("Number of dogs from "+cityLookup+" is : " + allDogsFromCity(Dogs,cityLookup));
+	
+	var nameLookup = "Jack"	
+		printArray("We were looking for "+nameLookup+" and here it is : ")
+		printArray(allDogsFromCity(Dogs,nameLookup));
+	
+	var ageLookup =10; 
+	printArray("We were looking for dogs older then  "+ageLookup+" and here it is : ")
+	printArray(allDogsOlderThen(Dogs,ageLookup));
 		
-//Search functions	
+//Search functions
+//Find all dogs from city	
 	function allDogsFromCity(vDogs,vCity)
     {
 	var dogCount=0;
 	       for(i = 0; i < vDogs.length; i++) {
-    if (!vDogs[i]) continue;  // Can't proceed with undefined data
+    if (!vDogs[i]) continue; 
 	var vDog = vDogs[i];
 	var vDogCity = vDog.address.city;
-	console.log(vDogCity);
+	//console.log(vDogCity);
 	if (vDogCity==vCity) {dogCount++;
 	}
 	
 }
 		return dogCount;
+    }
+	
+//Find first dog by name	
+	function allDogsFromCity(vDogs,vName)
+    {
+
+	       for(i = 0; i < vDogs.length; i++) {
+    if (!vDogs[i]) continue; 
+	var vDog = vDogs[i];
+	var vDogName = vDog.name;
+	//console.log(vDogCity);
+	if (vDogName==vName) {return vDog;
+	}
+	}
+		
+    }
+	
+//Find all doga older then 10 years	
+	function allDogsOlderThen(vDogs,vAge)
+    {
+	var DogsResultset=[];
+	var cntIndex =0;
+	       for(i = 0; i < vDogs.length; i++) {
+    if (!vDogs[i]) continue; 
+	var vDog = vDogs[i];
+	var vDogAge = vDog.age;
+	//console.log(vDogCity);
+	if (vDogAge>vAge) {
+	DogsResultset[cntIndex]=vDog;
+	cntIndex++;
+		vDogs;
+	}
+	}
+	return DogsResultset;
+		
     }
 		
 		
