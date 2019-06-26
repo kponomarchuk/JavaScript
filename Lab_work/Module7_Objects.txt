@@ -17,8 +17,8 @@
 	assignAddressParam (Address1,"Ukraine", "Kiev", "White");
 	assignAddressParam (Address2,"Poland", "Wroclaw", "Black");
 	
-		printArray(Address1);
-		printArray(Address2);
+		//printArray(Address1);
+		//printArray(Address2);
 //Assigning params for Toys	
 	assignToyParam (Toy1,"Stick");
 	assignToyParam (Toy2,"Ball");
@@ -27,23 +27,38 @@
 	assignDogParam (Dog1,"Tuzik",21, Address1,[Toy1,Toy2,Toy3]);
 	assignDogParam (Dog2,"Sharik",10, Address2,[Toy2,Toy3]);
 	assignDogParam (Dog3,"Jack",12, Address1,[Toy1,Toy3]);
-		printArray(Dog1);
-		printArray(Dog2);
-		printArray(Dog3);
+		//printArray(Dog1);
+		//printArray(Dog2);
+		//printArray(Dog3);
 //Creation of the Dog Array
 	var Dogs = [Dog1,Dog2,Dog3];
+console.log("*******ALL DOGS THAT WERE CREATED********");
 		printArray(Dogs);
-		
+//Search function execution
+console.log("");
+console.log("*******CHECK NUMBER 1********");
+console.log("");
 	var cityLookup = "Kiev";	
 		console.log("Number of dogs from "+cityLookup+" is : " + allDogsFromCity(Dogs,cityLookup));
-	
+console.log("");
+console.log("*******CHECK NUMBER 2********");
+console.log("");	
 	var nameLookup = "Jack"	
 		printArray("We were looking for "+nameLookup+" and here it is : ")
-		printArray(allDogsFromCity(Dogs,nameLookup));
-	
+		printArray(dogWithName(Dogs,nameLookup));
+console.log("");
+console.log("*******CHECK NUMBER 3********");
+console.log("");	
 	var ageLookup =10; 
 	printArray("We were looking for dogs older then  "+ageLookup+" and here it is : ")
 	printArray(allDogsOlderThen(Dogs,ageLookup));
+console.log("");
+console.log("*******CHECK NUMBER 4********");
+console.log("");	
+	
+	var numOfToysLookup =2; 
+	printArray("We were looking for dogs with more than  "+numOfToysLookup+" and here it is : ")
+	printArray(allDogsWithMoreThanNumOfToys(Dogs,2));
 		
 //Search functions
 //Find all dogs from city	
@@ -63,7 +78,7 @@
     }
 	
 //Find first dog by name	
-	function allDogsFromCity(vDogs,vName)
+	function dogWithName(vDogs,vName)
     {
 
 	       for(i = 0; i < vDogs.length; i++) {
@@ -96,7 +111,24 @@
 	return DogsResultset;
 		
     }
+
+//Find all doga that have more than 2 Toys	
+	function allDogsWithMoreThanNumOfToys(vDogs,vInToyNumber)
+    {
+	var DogsResultset=[];
+	var cntIndex =0;
+	       for(i = 0; i < vDogs.length; i++) {
+    if (!vDogs[i]) continue; 
+	var vDog = vDogs[i];
+	var vNumOfToys = vDog.toy.length;
+	if (vNumOfToys>vInToyNumber) {
+	DogsResultset[cntIndex]=vDog;
+	cntIndex++;
+			}
+	}
+	return DogsResultset;
 		
+    }	
 		
 		
 /////Creation and population of the object params
