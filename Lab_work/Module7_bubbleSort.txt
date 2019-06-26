@@ -1,0 +1,88 @@
+
+(function ()
+{
+    var numbers = [];
+
+    fillArrayWithRndNumbers(numbers, 10);
+	
+	printArray(numbers);
+
+    bubbleSort(numbers);
+
+    printArray(numbers);
+
+    function bubbleSort(arr)
+    {
+	
+	for(j = 0 ; j < arr.length-1 ; j++){
+        for(i = 0 ; i < arr.length-j ; i++){
+			if (arr[i]>arr[i+1]){
+			swap(arr, i, i+1)
+			numOfSwaps++;
+			}
+		}
+		}
+		return arr;
+		
+    }
+
+    // Utils
+
+    // should swap elements with given positions
+    function swap(arr, pos1, pos2)
+    {
+        // TODO your code here
+		
+		var tempVar = arr[pos1];
+		arr[pos1] = arr[pos2];
+		arr[pos2] = tempVar;
+    }
+
+    // return count of elements el within array
+    function getCountOfElements(arr, el)
+    {
+        var cntElem =0;
+		for(i = 0 ; i < arr.length ; i++){
+			if(arr[i]==el)
+			{cntElem +=1;
+			}
+		}
+		return cntElem;
+    }
+
+    // returns:
+    //
+    //     el if exists
+    //    -1 if not
+    function findElement(arr, el)
+   {
+        for(i = 0 ; i < arr.length ; i++)
+			{
+				if (arr[i] == el)
+				{return el;
+				}
+		    }
+	return -1;
+    }
+
+    function fillArrayWithRndNumbers(arr, count)
+    {
+         for(i = 0 ; i < count ; i++)
+			{
+				arr[i] = getRndNumber();
+				
+			}
+
+    }
+
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+    function getRndNumber()
+    {
+        return Math.floor(Math.random() * 100);
+    }
+
+})();
