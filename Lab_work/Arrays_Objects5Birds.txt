@@ -18,12 +18,16 @@
  
  
  
- SellBird(Shop, "CANARY", 2);
- SellBird(Shop, "FILIN", 2);
+ //sellBird(Shop, "CANARY", 2);
+ //sellBird(Shop, "FILIN", 2);
  
-  SellBird(Shop, "PIGEON", 100);
+ //sellBird(Shop, "PIGEON", 100);
  
   printArray(Shop);
+  getShopInfo(Shop);
+  
+  
+  console.log("END");
   
  //DEMO END
 		
@@ -64,7 +68,7 @@
 			}
 	}
 	
-	function SellBird(vShop, birdType, vCount)
+	function sellBird(vShop, birdType, vCount)
     {
 		var birdExist = false;
 		for(i = 0; i < vShop.length; i++) {
@@ -85,7 +89,46 @@
 				
 			}
 	}
+	
+	function getShopInfo(vShop)
+    {
+	
+	var vBirdTypeLabel ="BIRD_TYPE";
+	var vBirdPriceLabel ="BIRD_PRICE";
+	var vBirdAvailableLabel ="BIRDS_AVAILABLE";
+	var vBirdsSoldLabel ="BIRDS_SOLD";
+	var vTotalRevenueLabel ="TOTAL_REVENUE";
+	var vTitleLabel = " BIRD-SHOP CURRENT STATUS";
+	var vHeader = vBirdTypeLabel+"||"+vBirdPriceLabel+"||"+vBirdAvailableLabel+"||"+vBirdsSoldLabel+"||"+vTotalRevenueLabel;
+	
+			console.log("|"+printSymbol("-",vHeader.length)+"|");
+			console.log("|"+ printSymbol(" ",((vHeader.length-vTitleLabel.length)/2))+vTitleLabel+printSymbol(" ",((vHeader.length-vTitleLabel.length)/2))+"|");
+			console.log("|"+printSymbol("-",vHeader.length)+"|");
+			console.log("|"+vHeader+"|");
+			console.log("|"+printSymbol("-",vHeader.length)+"|");
+		for(i = 0; i < vShop.length; i++) {
+			console.log(i); 
+			var Bird = vShop[i];
+			console.log("|"+ Bird.birdType+printSymbol(" ",10) +"||");
+			//   Bird.birdType+ printSymbol(" ",(vBirdTypeLabel.length-Bird.birdType.length))+"||"
+			//+Bird.birdPrice+printSymbol(" ",(vBirdPriceLabel.length-Bird.birdPrice.toString().length))+"||"
+			//+Bird.birdsAvailable+printSymbol(" ",(vBirdAvailableLabel.length-Bird.birdsAvailable.toString().length))+"||"
+			//+Bird.birdsSoldOut+printSymbol(" ",(vBirdsSoldLabel.length-Bird.birdsSoldOut.toString().length))+"||"
+			//+Bird.birdsSoldOut+printSymbol(" ",(vTotalRevenueLabel.length-(Bird.birdsSoldOut*Bird.birdPrice).toString().length))+"||"
+			//);
+			
+		
+	    }
+	}
 
+	function printSymbol(vSymbol, vNumOfTimes)
+    {
+	var resultset="";
+	    for(i = 0; i < vNumOfTimes; i++) {
+		resultset=resultset+vSymbol
+		}
+		return resultset;
+    }
 		
 	
     function printArray(arr)
