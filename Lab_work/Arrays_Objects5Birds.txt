@@ -1,0 +1,101 @@
+(function ()
+{
+	
+//DEMO START
+ var Shop = [];
+
+ 
+;
+ addBirdToShop(Shop, createBird("PIGEON",20,30));
+ 
+ addBirdToShop(Shop,createBird("CANARY",100,5));
+ 
+ addBirdToShop(Shop, createBird("SPARROW",5,3));
+ 
+ addBirdToShop(Shop,createBird("SPARROW",7,10));
+ 
+ printArray(Shop);
+ 
+ 
+ 
+ SellBird(Shop, "CANARY", 2);
+ SellBird(Shop, "FILIN", 2);
+ 
+  SellBird(Shop, "PIGEON", 100);
+ 
+  printArray(Shop);
+  
+ //DEMO END
+		
+/////Creation and population of the object params
+    function createBird(vBirdType,vBirdPrice,
+		vBirdsAdded)
+    {
+		var vBird = {
+		birdType:"",
+		birdPrice:"",
+		birdsAvailable:0,
+		birdsSoldOut:0}
+		
+		
+      	vBird.birdType=vBirdType;
+		vBird.birdPrice=vBirdPrice;
+		vBird.birdsAvailable=vBird.birdsAvailable+vBirdsAdded;
+		
+		return vBird;
+		
+    }
+	
+	function addBirdToShop(vShop, vBird)
+    {
+		var birdExist = false;
+		for(i = 0; i < vShop.length; i++) {
+			var Bird = vShop[i];
+		if (Bird.birdType==vBird.birdType){
+			Bird.birdsAvailable=Bird.birdsAvailable+vBird.birdsAvailable;
+			Bird.birdPrice=vBird.birdPrice;
+			birdExist = true;
+			}
+		
+	    }
+		if (birdExist == false){ 
+				vShop.push(vBird);
+				
+			}
+	}
+	
+	function SellBird(vShop, birdType, vCount)
+    {
+		var birdExist = false;
+		for(i = 0; i < vShop.length; i++) {
+			var Bird = vShop[i];
+		if (Bird.birdsAvailable < vCount){ 
+		console.log("CAN'T SELL BIRDS WITH TYPE: "+birdType +". NUMBER OF BIRDS IS NOT ENOUGH. YOU WANT TO SELL "+ vCount + " YOU GOT " + Bird.birdsAvailable );
+				return;
+			}
+		if (Bird.birdType==birdType){
+			Bird.birdsAvailable=Bird.birdsAvailable-vCount;
+			Bird.birdsSoldOut=Bird.birdsSoldOut+vCount;
+			birdExist = true;
+			}
+		
+	    }
+		if (birdExist == false){ 
+		console.log("CAN'T SELL BIRDS WITH TYPE: "+birdType +". NO SUCH TYPES IN THE SHOP");
+				
+			}
+	}
+
+		
+	
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+    function getRndNumber()
+    {
+        return Math.floor(Math.random() * 100);
+    }
+
+})();
