@@ -1,0 +1,102 @@
+(function ()
+{
+    //var numbers = [];
+
+    //fillArrayWithRndNumbers(numbers, 10);
+	
+	var numbers = [,-10,-20,1,-5,2,-6,-3,4,-1];
+	
+	console.log("Initial massive:"+numbers);
+	var firstPositive= getFirstPositive(numbers);
+	console.log("Sorted massive:"+numbers );
+	console.log("First positive number in this massive is:"+firstPositive);
+	
+	function getFirstPositive(vArr){
+	var result = 1;
+	bubbleSort(vArr);
+	
+	for(var i = 0 ; i < vArr.length ; i++){
+		if (vArr[i]<0||vArr[i]==undefined){
+			continue;
+		}
+	
+		if(result<vArr[i]){
+			return result;
+		}
+		else{
+			result++;
+		}
+	}
+	//when all values are negative
+	return result;
+	}
+	
+	
+	
+////////// Utils
+    function bubbleSort(arr)
+    {
+	
+		for(var j = 0 ; j < arr.length-1 ; j++){
+		
+		
+			for(var i = 0 ; i < arr.length-j ; i++){
+			
+				if (arr[i]>arr[i+1]){
+					swap(arr, i, i+1)
+					
+				}
+				
+				var numOfSortedElem= 0;
+				for(var k = 0 ; k < arr.length-j ; k++){
+					if (arr[k]>arr[k+1]){
+						break;
+						}
+						else {numOfSortedElem++;}
+						
+						
+						if (numOfSortedElem+1 == arr.length-j){
+							return arr;
+			
+						}
+				}
+			}
+		}
+			return arr;
+		
+    }
+
+    
+
+    // should swap elements with given positions
+    function swap(arr, pos1, pos2)
+    {
+        // TODO your code here
+		
+		var tempVar = arr[pos1];
+		arr[pos1] = arr[pos2];
+		arr[pos2] = tempVar;
+    }
+
+    
+    function fillArrayWithRndNumbers(arr, count)
+    {
+         for(i = 0 ; i < count ; i++)
+			{
+				arr[i] = getRndNumber();
+				
+			}
+
+    }
+
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+    function getRndNumber()
+    {
+        return Math.floor(Math.random() * 100);
+    }
+
+})();
