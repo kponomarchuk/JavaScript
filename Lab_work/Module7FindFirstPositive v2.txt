@@ -1,0 +1,40 @@
+(function ()
+{
+	
+	var numbers = [,-8,1,2,3,5,10,20,15,40,50,45];
+	
+	printArray(numbers);
+	
+	console.log(getFirstPositive(numbers));
+	
+	
+	function getFirstPositive(vArr){
+	var result=1;
+	while (findElement(vArr,result)>0){
+	result++;
+	}
+	return result;
+	}
+    // Utils
+
+    // returns:
+    //
+    //     el if exists
+    //    -1 if not
+    function findElement(arr, el)
+   {
+        for(i = 0 ; i < arr.length ; i++)
+			{
+				if (arr[i] == el)
+				{return el;
+				}
+		    }
+	return -1;
+    }
+
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+})();
