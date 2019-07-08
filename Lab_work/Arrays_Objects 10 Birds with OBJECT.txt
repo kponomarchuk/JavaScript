@@ -1,0 +1,178 @@
+(function ()
+{
+	
+//DEMO START
+ var Shop = [];
+
+ 
+
+console.log("                                    ");
+console.log("***ADDING BIRDS TO THE SHOP***");
+console.log("                                    ");
+
+ addBirdToShop(Shop, new Bird("PIGEON",20,30));
+ 
+ addBirdToShop(Shop, new Bird("CANARY",100,5));
+ 
+ addBirdToShop(Shop, new Bird("SPARROW",5,3));
+ 
+ addBirdToShop(Shop, new Bird("SPARROW",7,10));
+ 
+ printArray(Shop);
+ 
+console.log("                                    ");
+console.log("***SELLINNG BIRDS ");
+console.log("                                    ");
+ 
+ 
+ 
+  sellBird(Shop, "CANARY", 2);
+  sellBird(Shop, "FILIN", 2);
+ 
+  sellBird(Shop, "PIGEON", 100);
+ 
+  printArray(Shop);
+console.log("                                    ");
+console.log("***GETTING SHOP INFO");
+console.log("                                    ");
+  getShopInfo(Shop);
+  
+console.log("                                    ");
+console.log("***GETTING BIRD REVENUE");
+console.log("                                    ");
+  
+  console.log("YOU EARNED FOR CANARYS: "+birdRevenue(Shop,"CANARY"));
+  console.log("YOU EARNED FOR COLIBRYS: "+birdRevenue(Shop,"COLIBRY"));
+  
+  console.log("END");
+  
+ //DEMO END
+		
+/////Creation and population of the object params
+  	
+	 function Bird(vBirdType,vBirdPrice,vBirdsAdded)
+	 {
+  			
+      	this.birdType=vBirdType;
+		this.birdPrice=vBirdPrice;
+		if 	(this.birdsAvailable==undefined )
+		{
+		this.birdsAvailable =0;
+		}	
+		this.birdsAvailable=this.birdsAvailable+vBirdsAdded;
+		this.birdsSoldOut=0;
+				
+		
+    }
+	
+	function addBirdToShop(vShop, vBird)
+    {
+		var birdExist = false;
+		for(var i = 0; i < vShop.length; i++) {
+			var Bird = vShop[i];
+		if (Bird.birdType==vBird.birdType){
+			Bird.birdsAvailable=Bird.birdsAvailable+vBird.birdsAvailable;
+			Bird.birdPrice=vBird.birdPrice;
+			birdExist = true;
+			}
+		
+	    }
+		if (birdExist == false){ 
+				vShop.push(vBird);
+				
+			}
+	}
+	
+	function sellBird(vShop, birdType, vCount)
+    {
+		var birdExist = false;
+		for(var i = 0; i < vShop.length; i++) {
+			var Bird = vShop[i];
+		if (Bird.birdsAvailable < vCount){ 
+		console.log("CAN'T SELL BIRDS WITH TYPE: "+birdType +". NUMBER OF BIRDS IS NOT ENOUGH. YOU WANT TO SELL "+ vCount +birdType+ " YOU GOT " + Bird.birdsAvailable );
+				return;
+			}
+		if (Bird.birdType==birdType){
+			Bird.birdsAvailable=Bird.birdsAvailable-vCount;
+			Bird.birdsSoldOut=Bird.birdsSoldOut+vCount;
+			console.log(vCount+" "+birdType+"S" + " WERE SOLD OUT");
+			birdExist = true;
+			}
+		
+	    }
+		if (birdExist == false){ 
+		console.log("CAN'T SELL BIRDS WITH TYPE: "+birdType +". NO SUCH TYPES IN THE SHOP");
+				
+			}
+	}
+	
+	function getShopInfo(vShop)
+    {
+	
+	var vBirdTypeLabel ="    BIRD_TYPE    ";
+	var vBirdPriceLabel ="   BIRD_PRICE   ";
+	var vBirdAvailableLabel ="   BIRDS_AVAILABLE   ";
+	var vBirdsSoldLabel ="   BIRDS_SOLD   ";
+	var vTotalRevenueLabel ="   TOTAL_REVENUE   ";
+	var vTitleLabel = " BIRD-SHOP CURRENT STATUS";
+	var vHeader = vBirdTypeLabel+"||"+vBirdPriceLabel+"||"+vBirdAvailableLabel+"||"+vBirdsSoldLabel+"||"+vTotalRevenueLabel;
+	var totalShopRevenue =0;
+	
+			console.log(printSymbol("-",vHeader.length));
+			console.log( printSymbol(" ",((vHeader.length-vTitleLabel.length)/2))+vTitleLabel+printSymbol(" ",((vHeader.length-vTitleLabel.length)/2)));
+			console.log(printSymbol("-",vHeader.length));
+			console.log(vHeader);
+			console.log(printSymbol("-",vHeader.length));
+		for(var k = 0; k < vShop.length; k++) {
+			var Bird = vShop[k];
+			//console.log(vBirdTypeLabel.length-Bird.birdType.length);
+			//console.log( Bird.birdType+printSymbol(" ",) +"||");
+			console.log(Bird.birdType+ printSymbol(" ",(vBirdTypeLabel.length-Bird.birdType.length))+"||"
+			+Bird.birdPrice+printSymbol(" ",(vBirdPriceLabel.length-Bird.birdPrice.toString().length))+"||"
+			+Bird.birdsAvailable+printSymbol(" ",(vBirdAvailableLabel.length-Bird.birdsAvailable.toString().length))+"||"
+			+Bird.birdsSoldOut+printSymbol(" ",(vBirdsSoldLabel.length-Bird.birdsSoldOut.toString().length))+"||"
+			+Bird.birdsSoldOut*Bird.birdPrice+printSymbol(" ",(vTotalRevenueLabel.length-(Bird.birdsSoldOut*Bird.birdPrice).toString().length))
+			);
+			totalShopRevenue=totalShopRevenue+(Bird.birdsSoldOut*Bird.birdPrice);
+			
+		
+	    }
+		console.log(printSymbol("-",vHeader.length));
+		console.log("TOTAL SHOP REVENUE= "+printSymbol(" ",vHeader.length -("TOTAL SHOP REVENUE= ".length +totalShopRevenue.toString().length))+totalShopRevenue);
+		
+		
+	}
+
+	function birdRevenue(vShop,vBirdType){
+	
+	for(var k = 0; k < vShop.length; k++) {
+			var Bird = vShop[k];
+				if (Bird.birdType==vBirdType){
+				return Bird.birdsSoldOut*Bird.birdPrice;
+				}
+		
+	}
+	console.log("No such bird "+vBirdType+" in the shop!!!");
+	}
+	
+	function printSymbol(vSymbol, vNumOfTimes)
+    {
+	var resultset="";
+	    for(var i = 0; i < vNumOfTimes; i++) {
+		resultset=resultset+vSymbol
+		}
+		return resultset;
+    }
+		
+	
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+   // function getRndNumber()
+   // {
+   //     return Math.floor(Math.random() * 100);
+   // }
+
+})();
