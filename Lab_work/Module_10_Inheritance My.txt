@@ -1,0 +1,65 @@
+(function ()
+{
+
+
+	function House(buildYear) 
+	{this.buildYear = buildYear;
+	}
+		House.prototype.houseInfo = function()
+	{
+		console.log("This house was buit in :" + this.buildYear)
+	}
+	
+	function CountryHouse(buildYear, owner)
+	{House.call(this, buildYear);
+	this.owner = owner;
+	}
+	
+	CountryHouse.prototype = Object.create(House.prototype);
+	CountryHouse.prototype.constructor = CountryHouse;
+	
+	CountryHouse.prototype.houseInfo = function()
+	{
+		House.prototype.houseInfo.call(this);
+		console.log("Owher of this house is :" + this.owner);
+	}
+	
+	function CityHouse(buildYear, numOfFloors)
+	{House.call(this, buildYear);
+	this.numOfFloors = numOfFloors;
+	}
+	
+	CityHouse.prototype = Object.create(House.prototype);
+	CityHouse.prototype.constructor = CityHouse;
+	
+	CityHouse.prototype.houseInfo = function()
+	{
+		House.prototype.houseInfo.call(this);
+		console.log("Number of the floors in this city House is:" + this.numOfFloors);
+	}
+	
+	////////////////////////////////////////	
+	
+	var house1= new House("1940");
+	house1.houseInfo();
+	
+console.log("-----------------------------------")	;
+	
+	var countryHouse1 = new CountryHouse("1920","Stepan");
+    countryHouse1.houseInfo();
+	
+console.log("-----------------------------------")	;
+	
+	var cityHouse1 = new CityHouse("1920",19);
+    cityHouse1.houseInfo();
+	
+	
+	
+	
+
+    function printArray(arr)
+    {
+        console.log(JSON.stringify(arr));
+    }
+
+})();
