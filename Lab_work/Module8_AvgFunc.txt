@@ -1,0 +1,27 @@
+(function(){
+
+avgAmt();
+avgAmt(1,2,3);
+avgAmt(10,10);
+avgAmt(-20,30);
+
+function avgAmt(){
+var sum = 0;
+var cnt = 0;
+if (arguments.length==0) {
+console.log("SUM: 0 CNT: 0 AVG: 0");
+}
+else {
+for(var i = 0; i < arguments.length; i++) {
+sum = sum + arguments[i];
+}
+cnt =arguments.length;
+
+ var avg = sum /cnt;
+
+console.log("SUM: " +sum+ " CNT: "+cnt + " AVG: "+ avg);
+}
+}
+}
+)
+()

@@ -1,0 +1,47 @@
+--------------------
+1 --func without param
+--------------------
+function name_age()
+{
+var name= "KSU";
+var age = 23;
+console.log("NAME: "+name+" AGE:"+age);
+}
+name_age();
+
+--------------------
+2 --func with param 
+--------------------
+function name_age(name, age)
+{console.log("NAME: "+name+" AGE:"+age);
+}
+name_age("KSU",23);
+--------------------
+3 --func with param(boolean)
+--------------------
+function name_age(name, age, true_false)
+{console.log("NAME: "+name+" AGE:"+age+ "This is :"+Boolean(true_false));
+}
+name_age("KSU",23, 1);
+VM485:2 NAME: KSU AGE:23This is :true
+--------------------
+4-func with return
+--------------------
+function name_age(name, age, true_false)
+{console.log("NAME: "+name+" AGE:"+age);
+return(Boolean(true_false))
+}
+name_age("KSU",23, 1);
+VM700:2 NAME: KSU AGE:23
+--------------------
+5 - function called from function
+--------------------
+
+function yearOfBirthCalc(age){
+return 2019-age;}
+function name_age(name, age)
+{yearOfBirth = yearOfBirthCalc(age);
+console.log("NAME: "+name+" YEATR_OF_BITRTH:"+yearOfBirth);
+}
+name_age("KSU",23);
+VM1208:5 NAME: KSU YEATR_OF_BITRTH:1996
