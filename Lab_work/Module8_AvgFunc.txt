@@ -4,6 +4,9 @@ avgAmt();
 avgAmt(1,2,3);
 avgAmt(10,10);
 avgAmt(-20,30);
+console.log("testRun");
+m =[1,2,3];
+avgAmt.apply({}, m);
 
 function avgAmt(){
 var sum = 0;
