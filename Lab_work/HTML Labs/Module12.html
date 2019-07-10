@@ -18,13 +18,16 @@
 	function tst()
     {
 	<!--document.getElementById("splink").innerHTML = "GOOGLE";>
-	<!--var link = document.body.childNodes;-->
 	var link = document.getElementsByTagName('a');
-	alert(" nodeType: "+link[0].nodeType+" testContent: "+ link[0].textContent+" nodeValue: "+link[0].nodeValue+" innerHTML: "+link[0].innerHTML);
-	
-	<!--alert(link[0].textContent);-->
-		}
-	
+	alert(	" nodeType: "+link[0].nodeType+
+			" testContent: "+ link[0].textContent+
+			" nodeValue: "+link[0].nodeValue+
+			" innerHTML: "+link[0].innerHTML);
+			
+	var link2 = document.getElementById('splink');
+	if 
+	alert(link2.childNodes[0].nodeType);
+	}
 	
 </script>
 <form>This is form</form>
