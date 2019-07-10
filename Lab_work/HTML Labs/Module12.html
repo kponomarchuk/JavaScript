@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+<div id="codesection">
+<ul>
+<li><a href="http://www.sitepoint.com/" id="splink">SitePoint</a>
+</li>
+<li><a href="http://www.yahoo.com/" id="yalink">Yahoo!</a></li>
+</ul>
+<script>
+    function a()
+    {alert(document.getElementById('splink').href);}
+	function changeHref()
+    { document.getElementById('splink').href="http://www.google.com/";
+	alert(document.getElementById('splink').href);}
+	function tst()
+    {
+	<!--document.getElementById("splink").innerHTML = "GOOGLE";>
+	<!--var link = document.body.childNodes;-->
+	var link = document.getElementsByTagName('a');
+	alert(" nodeType: "+link[0].nodeType+" testContent: "+ link[0].textContent+" nodeValue: "+link[0].nodeValue+" innerHTML: "+link[0].innerHTML);
+	
+	<!--alert(link[0].textContent);-->
+		}
+	
+	
+</script>
+<form>This is form</form>
+<!--<button>Click me!</button> -->
+<input type="button" value="Href of first <a>" name="hello" OnClick="a();">
+<p></p>
+<input type="button" value="Change href of first <a> o GOOGLE.COM" name="hello1" OnClick="changeHref();">
+<p></p>
+<input type="button" value="Test function" name="hello2" OnClick="tst();">
+</div>
+</body>
+</html>
