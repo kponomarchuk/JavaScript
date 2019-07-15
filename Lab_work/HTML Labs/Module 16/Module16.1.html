@@ -1,0 +1,44 @@
+<head>
+<script>
+var t =0;
+var c =0;
+function timedCount(){
+c=c+1;
+document.getElementById("text1").innerHTML = c;
+t=setTimeout("timedCount()",1000);
+}
+
+function stopCount(){
+c=0;
+document.getElementById("text1").innerHTML = c;
+clearTimeout(t);
+}
+
+function open_win(){
+var v = window.open("http://www.google.com", "_blank", "toolbar=yes, menubar=yes, scrollbars=yes, width=400, height=400");
+}
+
+function  alertCurrentSite(){
+alert(window.location);
+}
+
+function  redirect(){
+window.location="http://www.google.com";
+}
+</script>
+</head>
+<body>
+<p id="text1">test1</p>
+<td>
+<tr><input type="button" id="startButton" value = "Start button" onClick="timedCount()"></tr>
+<tr><input type="button" id="stopButton" value = "Stop button" onClick="stopCount()"></tr>
+</td>
+<p> </p>
+<td>
+<tr><input type="button" id="newWindow" value = "Google window" onClick="open_win()"></tr>
+</td>
+<p> </p>
+<tr><input type="button" id="alertCurrentSite" value = "Where are you" onClick="alertCurrentSite()"></tr>
+<tr><input type="button" id="redirect" value = "Redirect to google" onClick="redirect()"></tr>
+</body>
+</html>
