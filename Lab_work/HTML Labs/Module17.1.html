@@ -1,0 +1,18 @@
+<head>
+</head>
+<body>
+<p id="text1">test1</p>
+<input type="button" id="butt" value = "Start button">
+<input type="button" id="myElement" value = "Start button">
+<script>
+function alertFunc1(){
+alert(1);
+}
+function alertFunc2(){
+alert(2);
+}
+document.getElementById("butt").addEventListener("click", alertFunc1,false);
+document.getElementById("butt").addEventListener("click", alertFunc2,false);
+</script>
+</body>
+</html>
