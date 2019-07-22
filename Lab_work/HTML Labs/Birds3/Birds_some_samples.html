@@ -1,0 +1,318 @@
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+.bg
+{
+position:absolute;
+left:0px;
+top:0px;
+z-index:-5;
+}
+.container
+{
+position:relational;
+left:350px;
+top:10px;
+}
+#addBirds
+{
+position:absolute;
+left:40px;
+top:350px;
+}
+#addCustomer
+{
+position:absolute;
+left:40px;
+top:950px;
+}
+.container2
+{
+position:relative;
+left:0px;
+top:1000px;
+}
+
+</style>
+</head>
+<body>
+<img class="bg" src="birdshop_bg.png"  width=1800px height=2000px> 
+<div class="container">
+ 
+<form id="addBirds">
+<div class="form-row">
+    
+	<div class="form-group col-md-6">
+      <label for="inputBirdType">Bird type</label>
+      <input type="text" class="form-control" id="birdType">
+    </div>
+    
+	<div class="form-group col-md-2">
+      <label for="inputBirdPrice">Bird price</label>
+      <input type="text" class="form-control" id="birdPrice">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputCount">Count</label>
+      <input type="text" class="form-control" id="birdCount">
+    </div>
+</div>
+<button type="submit" class="btn btn-primary" id="addBirdBtn">+ Add</button>
+</form>
+
+ <form id="addCustomer">
+  <div class="form-row">
+  <div class="form-group col-md-10">
+      <label for="inputCustomer">Customer's name</label>
+      <input type="text" class="form-control" id="inputCustomer">
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary" id="addCustomerBtn" >+ Add</button>
+ </form>
+
+</div>
+<div class="container2">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container1">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<p>_____________________________________________________________________________________________________</p>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+////////////Customer creation////////////////
+<form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">Password</label>
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+</form>
+
+/////Sell bird form///////
+<form>
+  <div class="form-group col-md-6">
+      <label for="inputCity">Enter customer's name</label>
+      <input type="text" class="form-control" id="inputCity">
+  </div>
+  <button type="submit" class="btn btn-primary">+ Add</button>
+</form>
+
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+//////////////////
+
+
+<p>_____________________________________________________________________________________________________</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
+<p>_____________________________________________________________________________________________________</p>
+<div class="container">
+<input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+</div>
+----------------
+<button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+<button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+----------------
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
+
+
+<div class="container"><!--"container-fluid"-->
+
+<input type="button" id="Startbutt" value = "Start button">
+<input type="button" id="Stopbutt" value = "Stop button">
+<p></p>
+<input type="button" id="myElement" value = "Lab2">
+</div>
+
+</div>
+
+<script src="Birds.js"></script>
+</body>
+</html>

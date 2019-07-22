@@ -1,0 +1,137 @@
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+.bg
+{
+position:absolute;
+left:0px;
+top:0px;
+z-index:-5;
+}
+.container
+{
+position:relational;
+left:350px;
+top:10px;
+}
+#addBirds
+{
+position:absolute;
+left:40px;
+top:350px;
+}
+#addCustomer
+{
+position:absolute;
+left:40px;
+top:950px;
+}
+.container2
+{
+position:relative;
+left:0px;
+top:1200px;
+}
+
+</style>
+</head>
+<body>
+<img class="bg" src="birdshop_bg.png"  width=1800px height=2000px> 
+<div class="container">
+ 
+<form id="addBirds" onsubmit="event.preventDefault();">
+<div class="form-row">
+    
+	<div class="form-group col-md-6">
+      <label for="inputBirdType">Bird type</label>
+      <input type="text" class="form-control" id="birdType">
+    </div>
+    
+	<div class="form-group col-md-2">
+      <label for="inputBirdPrice">Bird price</label>
+      <input type="text" class="form-control" id="birdPrice">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputCount">Count</label>
+      <input type="text" class="form-control" id="birdCount">
+    </div>
+</div>
+<button type="submit" class="btn btn-primary" id="addBirdBtn">+ Add</button>
+</form>
+
+ <form id="addCustomer" onsubmit="event.preventDefault();">
+  <div class="form-row" >
+  <div class="form-group col-md-10">
+      <label for="inputCustomer">Customer's name</label>
+      <input type="text" class="form-control" id="inputCustomer">
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary" id="addCustomerBtn" >+ Add</button>
+ </form>
+
+</div>
+<div class="container2">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container1">
+<button class="btn btn-primary" id="refreshShopStatsBtn" >Refresh report</button>
+<p></p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">BIRD TYPE</th>
+      <th scope="col">BIRD PRICE</th>
+      <th scope="col">BIRDS AVAILABLE</th>
+	  <th scope="col">BIRDS SOLD</th>
+	  <th scope="col">TOTAL REVENUE</th>
+	  
+	  
+    </tr>
+  </thead>
+  <tbody id="tShopRep">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+	  <td>Mark</td>
+      <td>Otto</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+	  <td>Jacob</td>
+      <td>Thornton</td>
+     
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+	  <td>Larry</td>
+      <td>the Bird</td>
+     
+    </tr>
+  </tbody>
+</table>
+</div>
+<script src="Birds.js"></script>
+</body>
+</html>
