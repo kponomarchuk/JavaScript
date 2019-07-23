@@ -1,0 +1,132 @@
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+body {
+    background-image: url(birdshopbg.png); 
+    background-position: center top;
+    background-repeat: no-repeat;
+   }
+#ml{
+position: absolute;
+top: 25px;
+right: 400px;
+    }
+#addCustomer
+{
+position: relative;
+  top: 500px;
+    }
+
+#addBirds
+{
+position: relative;
+  top: 625px;
+    }
+
+#sellBirds
+{
+position: relative;
+  top: 725px;
+    }
+#Reports
+{
+position: relative;
+  top: 875px;
+    }	
+	
+</style>
+</head>
+<body>
+
+<div class="container">
+<a href="mailto:birdshop@gmail.com?Subject=Hello%20" target="_top" id="ml">birdshop@gmail.com</a>
+ 
+ <form id ="addCustomer" onsubmit="event.preventDefault();">
+<div class="form-row">
+	<div class="form-group col-md-4">
+      <label for="inputCustomer">Customer's name</label>
+      <input type="text" class="form-control" id="inputCustomer">
+    </div>
+  </div>
+   <button type="submit" class="btn btn-primary" id="addCustomerBtn" >+ Add</button>
+</form>
+ 
+ 
+<form id="addBirds" onsubmit="event.preventDefault();">
+<div class="form-row">
+    
+	<div class="form-group col-md-6">
+      <label for="inputBirdType">Bird type</label>
+      <input type="text" class="form-control" id="birdType">
+    </div>
+    
+	<div class="form-group col-md-2">
+      <label for="inputBirdPrice">Bird price $</label>
+      <input type="text" class="form-control" id="birdPrice">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputCount">Count</label>
+      <input type="text" class="form-control" id="birdCount">
+    </div>
+</div>
+<button type="submit" class="btn btn-primary" id="addBirdBtn">+ Add</button>
+</form>
+
+<form id ="sellBirds" onsubmit="event.preventDefault();">
+<div class="form-row">
+<div class="form-group col-md-4">
+      <label for="birdInputCustomer">Customer</label>
+      <select id="birdInputCustomer" class="form-control">
+        <option selected id="birdDrDnCustList">Choose...</option>
+      </select>
+    </div>
+	<div class="form-group col-md-4">
+      <label for="birdInputBird">Bird Type</label>
+      <select id="birdInputBird" class="form-control">
+        <option selected id="birdDrDnBirdList">Choose...</option>
+        </select>
+    </div>
+	<div class="form-group col-md-2">
+      <label for="sellbirdCount">Count</label>
+      <input type="text" class="form-control" id="sellbirdCount">
+    </div>
+	<div class="form-group col-md-2">
+      <label for="totalSellPrice">Total price</label>
+      <input type="text" class="form-control" id="totalSellPrice">
+    </div>
+  </div>
+   <button type="submit" class="btn btn-primary" id="sellBirdBtn" >  Sell  </button>
+</form>
+
+<div id="Reports">
+<button class="btn btn-primary" id="refreshShopStatsBtn" >Refresh report</button>
+<p></p>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">BIRD TYPE</th>
+      <th scope="col">BIRD PRICE $</th>
+      <th scope="col">BIRDS AVAILABLE</th>
+	  <th scope="col">BIRDS SOLD</th>
+	  <th scope="col">TOTAL REVENUE $</th>
+	  
+	  
+    </tr>
+  </thead>
+  <tbody id="tShopRep">
+   
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</div>
+<script src="Birds.js"></script>
+</body>
+</html>

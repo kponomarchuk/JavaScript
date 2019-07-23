@@ -1,0 +1,111 @@
+	function getShopInfo(vBirdList)
+    {
+		
+		//console.log("TOTAL SHOP REVENUE= "+printSymbol(" ",vHeader.length -("TOTAL SHOP REVENUE= ".length +totalShopRevenue.toString().length))+totalShopRevenue);
+		
+		
+		var totalShopRevenue =0;
+		var rowLine="";
+		var HTMLTableRows="";
+		for(var k = 0; k < vBirdList.length; k++) 
+		{
+			var Bird = vBirdList[k];
+			rowLine+="<tr>"+
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+	  <td>Mark</td>
+      <td>Otto</td>
+    </tr>
+			insert_Row("tShopRep",vInnerHTML);
+			
+			HTMLTableRows+=Bird.birdType+Bird.birdPrice+Bird.birdsAvailable+Bird.birdsSoldOut+(Bird.birdsSoldOut*Bird.birdPrice);
+			totalShopRevenue=totalShopRevenue+(Bird.birdsSoldOut*Bird.birdPrice);
+		}
+	alert(HTMLTableRows + " total revenue" + totalShopRevenue);
+	var t =document.getElementById("tShopRep");
+	
+	
+	}
+	
+	function insert_Row(vTableId,vInnerHTML)
+{
+var newRow=document.createElement("tr");
+newRow.innerHTML = vInnerHTML;
+var myTab = document.getElementById(vTableId);
+myTab.appendChild(newTab);
+}
+
+
+width=1800px height=2000px
+
+
+.bg
+{
+position:center;
+left:0px;
+top:0px;
+z-index:-5;
+}
+
+
+<img class="bg" src="birdshopbg.png">
+
+#addBirds
+{
+position:absolute;
+left:40px;
+top:350px;
+}
+
+#addCustomer
+{
+position:absolute;
+left:40px;
+top:950px;
+}
+
+.container
+{
+position:relational;
+left:350px;
+top:10px;
+}
+
+
+ <form id="addCustomer" onsubmit="event.preventDefault();">
+    <div class="form-row">
+	<div class="form-group col-md-4">
+      <label for="inputCustomer1">Customer's name</label>
+      <input type="text" class="form-control" id="inputCustomer1">
+    </div>
+	</div>
+  <button type="submit" class="btn btn-primary" id="addCustomerBtn1" >+ Add</button>
+ </form>
+ 
+ if (isNaN(_birdType))
+		{
+		alert("Please enter	 bird type!");
+		return;
+		}
+		if (isNaN(_birdPrice))
+		{
+		alert("Please enter price!");
+		return;
+		}
+		if (isNaN(_birdsAdded))
+		{
+		alert("Please enter quantity!");
+		return;
+		}
+		if (isNaN(_birdPrice))
+		{
+		alert("Please enter price!");
+		return;
+		}
+		if (isNaN(_birdsAdded))
+		{
+		alert("Please enter quantity!");
+		return;
+		}
